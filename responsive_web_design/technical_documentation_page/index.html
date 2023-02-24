@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="doc-intro">
+        <h1>Bootsrap</h1>
+        <p><strong>Build fast, responsive sites with Bootstrap!</strong>
+        </p></div>
+    
+    <nav id="navbar">
+        <header>Bootstrap Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Download">Download</a></li>
+            <li><a class="nav-link" href="#Layout">Layout</a></li>
+            <li><a class="nav-link" href="#Content">Content</a></li>
+            <li><a class="nav-link" href="#Components">Components</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.</p>
+                <p>Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. 
+                    See it in practice with this <a href="https://codepen.io/team/bootstrap/pen/qBamdLj">Bootstrap CodePen demo.</a></p>
+                    <ol>
+                        <li>Create a new index.html file in your project root. Include the <code>&lt;meta name="viewport"&gt;</code> 
+                            tag as well for proper responsive behavior in mobile devices.</li>
+                        <li>Include Bootstrap’s CSS and JS. Place the &lt;link&gt; tag in the &lt;head&gt; for our CSS, and the &lt;script&gt; 
+                            tag for our JavaScript bundle (including Popper for positioning dropdowns, poppers, and tooltips) before the closing &lt;/body&gt;. 
+                            Learn more about our CDN links.</li>
+                        <li>Hello, world! Open the page in your browser of choice to see your Bootstrapped page. 
+                            Now you can start building with Bootstrap by creating your own layout, adding dozens of 
+                            components, and utilizing our official examples.</li>
+                    </ol>
+
+            </article>
+        </section>
+        <section class="main-section" id="Download">
+            <header>Download</header>
+            <article>
+                <p>Download Bootstrap to get the compiled CSS and JavaScript, source code, or include it with your favorite package managers like npm, RubyGems, and more.</p>
+                <h3>Compiled CSS and JS</h3>
+                <p>Download ready-to-use compiled code for Bootstrap v5.3.0-alpha1 to easily drop into your project, which includes:
+                    <ul>
+                        <li>Compiled and minified CSS bundles</li>
+                        <li>Compiled and minified JavaScript plugins</li>
+                    </ul>
+                </p>
+                <h3>Source Files</h3>
+                <p>Compile Bootstrap with your own asset pipeline by downloading our source Sass, JavaScript, and documentation files. This option requires some additional tooling:
+                    <ul>
+                        <li>Sass compiler for compiling Sass source files into CSS files</li>
+                        <li>Autoprefixer for CSS vendor prefixing</li>
+                    </ul>
+                    Should you require our full set of build tools, they are included for developing Bootstrap and its docs, but they’re likely unsuitable for your own purposes
+                </p>
+                <h3>npm</h3>
+                <code>npm install bootstrap@5.3.0-alpha1</code>
+                <h3>yarn</h3>
+                <code>yarn add bootstrap@5.3.0-alpha1</code>
+            </article>
+        </section>
+        <section class="main-section" id="Layout">
+            <header>Layout</header>
+            <article>
+                <h3>Breakpoints</h3>
+                <p>Breakpoints are customizable widths that determine how your responsive layout behaves across device or viewport sizes in Bootstrap.</p>
+                <h4>Core concepts</h4>
+                <ul>
+                    <li><strong>Breakpoints are the building blocks of responsive design.</strong> 
+                        Use them to control when your layout can be adapted at a particular viewport or device size.</li>
+                    <li><strong>Use media queries to architect your CSS by breakpoint.</strong> 
+                        Media queries are a feature of CSS that allow you to conditionally apply styles based on a set of browser and operating system parameters. 
+                        We most commonly use min-width in our media queries.</li>
+                    <li><strong>Mobile first, responsive design is the goal.</strong> 
+                        Bootstrap’s CSS aims to apply the bare minimum of styles to make a layout work at the smallest breakpoint, and then layers on styles to adjust that design for larger devices. 
+                        This optimizes your CSS, improves rendering time, and provides a great experience for your visitors.</li>
+                </ul>
+                <p>These breakpoints are customizable via Sass—you’ll find them in a Sass map in our _variables.scss stylesheet.</p>
+                <code>$grid-breakpoints: (
+                    xs: 0,
+                    sm: 576px,
+                    md: 768px,
+                    lg: 992px,
+                    xl: 1200px,
+                    xxl: 1400px
+                  );</code>
+                <h3>Columns</h3>
+                <p>Learn how to modify columns with a handful of options for alignment, ordering, and offsetting thanks to our flexbox grid system. 
+                    Plus, see how to use column classes to manage widths of non-grid elements.</p>
+                <h4>How they work</h4>
+                <ul>
+                    <li><strong>Columns build on the grid’s flexbox architecture. </strong>
+                        Flexbox means we have options for changing individual columns and modifying groups of columns at the row level. 
+                        You choose how columns grow, shrink, or otherwise change.</li>
+                    <li><strong>When building grid layouts, all content goes in columns. </strong>The hierarchy of Bootstrap’s grid goes from container to row to column to your content. On rare occasions, you may combine content and column, 
+                        but be aware there can be unintended consequences.</li>
+                    <li><strong>Bootstrap includes predefined classes for creating fast, responsive layouts.</strong> 
+                        With six breakpoints and a dozen columns at each grid tier, we have dozens of classes already built for you to create your desired layouts. 
+                        This can be disabled via Sass if you wish.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Content">
+            <header>Content</header>
+            <article>
+                <h3>Reboot</h3>
+                <p>Reboot, a collection of element-specific CSS changes in a single file, 
+                    kickstart Bootstrap to provide an elegant, consistent, and simple baseline to build upon.</p>
+                <h4>Approach</h4>
+                <p>Reboot builds upon Normalize, providing many HTML elements with somewhat opinionated 
+                    styles using only element selectors. Additional styling is 
+                    done only with classes. For example, we reboot some &lt;table&gt; styles 
+                    for a simpler baseline and later provide .table, .table-bordered, and more.</p>
+                <p>Here are our guidelines and reasons for choosing what to override in Reboot: </p>
+                <ul>
+                    <li>Update some browser default values to use rems instead of ems for scalable component spacing.</li>
+                    <li>Avoid margin-top. Vertical margins can collapse, yielding unexpected results. More importantly though, a single direction of margin is a simpler mental model.</li>
+                    <li>For easier scaling across device sizes, block elements should use rems for margins.</li>
+                    <li>Keep declarations of font-related properties to a minimum, using inherit whenever possible.</li>
+                </ul>
+                <h4>CSS Variables</h4>
+                <p>With v5.1.1, we standardized our required @imports across all our CSS bundles 
+                    (including bootstrap.css, bootstrap-reboot.css, and bootstrap-grid.css) to include _root.scss. 
+                    This adds :root level CSS variables to all bundles, regardless of how many of them are used in 
+                    that bundle. Ultimately Bootstrap 5 will continue to see more CSS variables added over time, 
+                    in order to provide more real-time customization without the need to always recompile Sass. 
+                    Our approach is to take our source Sass variables and transform them into CSS variables. 
+                    That way, even if you don’t use CSS variables, you still have all the power of Sass. 
+                    This is still in-progress and will take time to fully implement.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Components">
+            <header>Components</header>
+            <article>
+                <h3>Accordion</h3>
+                <p>Build vertically collapsing accordions in combination with our Collapse JavaScript plugin.</p>
+                <p>The accordion uses collapse internally to make it collapsible. To render an accordion that’s expanded, add the <code>.open</code>  class on the <code>.accordion</code>.</p>
+                <h3>Navbar</h3>
+                <p>Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. 
+                    Includes support for branding, navigation, and more, including support for our collapse plugin.</p>
+                <p>Here’s what you need to know before getting started with the navbar:</p>
+                <ul>
+                    <li>Navbars require a wrapping <code>.navbar</code> with <code>.navbar-expand{-sm|-md|-lg|-xl|-xxl}</code>  for responsive collapsing and color scheme classes.</li>
+                    <li>Navbars and their contents are fluid by default. Change the container to limit their horizontal width in different ways.</li>
+                    <li> Use our spacing and flex utility classes for controlling spacing and alignment within navbars.</li>
+                    <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.</li>
+                </ul>
+                <h3>Dropdowns</h3>
+                <p>Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.</p>
+                <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. 
+                    They’re toggled by clicking, not by hovering; this is an intentional design decision.</p>
+                <p>Dropdowns are built on a third party library, Popper, which provides dynamic positioning and viewport detection.
+                     Be sure to include <code>popper.min.js</code>  before Bootstrap’s JavaScript or use <code>bootstrap.bundle.min.js / bootstrap.bundle.js</code>  which contains Popper. 
+                    Popper isn’t used to position dropdowns in navbars though as dynamic positioning isn’t required.</p>
+                <h3>Buttons</h3>
+                <p>Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
+                <p>If you don’t want the button text to wrap, you can add the <code>.text-nowrap</code>  class to the button. In Sass, you can set <code>$btn-white-space: nowrap</code> to disable text wrapping for each button.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p>All the documentation in this page is taken from <a href="https://getbootstrap.com/docs/5.3/components/dropdowns/">Bootstrap</a></p>
+            </article>
+        </section>
+    </main>
+    
+</body>
+</html>
